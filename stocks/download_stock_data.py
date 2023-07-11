@@ -23,12 +23,6 @@ import pandas as pd
 def download_stock_data(stock_symbol):
     # Download stock data
     stock_data = yf.download(stock_symbol, period="5y")
-    # start='2020-01-01',
-    # end='2023-12-31',
-    # progress=False)
-    # stock_data.sort_values(by=['Date'], inplace=True, ascending=False)
-
-    stock_data.head(10)
 
     if stock_data.empty:
         print(f"No data available for {stock_symbol}.")
