@@ -1,11 +1,12 @@
 import os
 import pandas as pd
 
+
 def read_csv_files():
     current_dir = os.getcwd()
-    print("Current Dir is"+current_dir)
+    print("Current Dir is" + current_dir)
 
-    csv_files = [file for file in os.listdir(current_dir) if file.endswith('.csv')]
+    csv_files = [file for file in os.listdir(current_dir) if file.endswith(".csv")]
 
     if not csv_files:
         print("No CSV files found in the current directory.")
@@ -14,7 +15,7 @@ def read_csv_files():
     dfs = []
     for file in csv_files:
         file_path = os.path.join(current_dir, file)
-        print("Reading file"+file_path)
+        print("Reading file" + file_path)
         df = pd.read_csv(file_path)
         num_records = len(df)
         print(f"Read {num_records} records from {file}")

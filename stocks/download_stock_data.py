@@ -7,11 +7,12 @@ def import_or_install(package_name):
         importlib.import_module(package_name)
     except ImportError:
         import pip
-        pip.main(['install', package_name])
+
+        pip.main(["install", package_name])
         importlib.invalidate_caches()
 
 
-import_or_install('yfinance==0.2.22')
+import_or_install("yfinance==0.2.22")
 
 
 # now this is the function
@@ -21,11 +22,10 @@ import pandas as pd
 
 def download_stock_data(stock_symbol):
     # Download stock data
-    stock_data = yf.download(stock_symbol,
-                             period = "5y")
-                           # start='2020-01-01',
-                           # end='2023-12-31',
-                           # progress=False)
+    stock_data = yf.download(stock_symbol, period="5y")
+    # start='2020-01-01',
+    # end='2023-12-31',
+    # progress=False)
     # stock_data.sort_values(by=['Date'], inplace=True, ascending=False)
 
     stock_data.head(10)
@@ -38,7 +38,7 @@ def download_stock_data(stock_symbol):
     stock_df = pd.DataFrame(stock_data)
 
     # Add a new column for stock name
-    stock_df['Stock Symbol'] = stock_symbol
+    stock_df["Stock Symbol"] = stock_symbol
 
     # Save the DataFrame as a CSV file
     file_name = f"{stock_symbol}_stock_data.csv"
@@ -48,6 +48,7 @@ def download_stock_data(stock_symbol):
     num_records = len(stock_df)
     print(f"Stock data saved as {file_name}.")
     print(f"Number of records: {num_records}")
+
 
 # Example usage
 # download_stock_data("TSLA")
