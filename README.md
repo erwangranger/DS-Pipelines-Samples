@@ -7,8 +7,9 @@ in the `./stocks/` directory.
 Clone the project into your RHODS environment.
 
 ```bash
-## uncomment this line if you want to run this from a notebook cell:
-# %%bash
+#%%bash
+## uncomment the line above if you want to run this from a notebook cell
+## ensure it's the very first line in the cell if you do
 cd ~
 git clone https://github.com/erwangranger/DS-Pipelines-Samples.git
 cd ~/DS-Pipelines-Samples/stocks
