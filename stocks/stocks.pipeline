@@ -33,7 +33,7 @@
             "label": "",
             "ui_data": {
               "label": "get.GOOGL.py",
-              "image": "/notebook/a-great-project/erik-repro/static/elyra/python.svg",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
               "x_pos": 39,
               "y_pos": 73,
               "description": "Run Python script"
@@ -93,7 +93,7 @@
             "label": "",
             "ui_data": {
               "label": "get.META.py",
-              "image": "/notebook/a-great-project/erik-repro/static/elyra/python.svg",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
               "x_pos": 45,
               "y_pos": 148,
               "description": "Run Python script"
@@ -153,7 +153,7 @@
             "label": "",
             "ui_data": {
               "label": "get.NVDA.py",
-              "image": "/notebook/a-great-project/erik-repro/static/elyra/python.svg",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
               "x_pos": 54,
               "y_pos": 293,
               "description": "Run Python script"
@@ -213,7 +213,7 @@
             "label": "",
             "ui_data": {
               "label": "get.MSFT.py",
-              "image": "/notebook/a-great-project/erik-repro/static/elyra/python.svg",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
               "x_pos": 52,
               "y_pos": 215,
               "description": "Run Python script"
@@ -270,10 +270,10 @@
               "mounted_volumes": [],
               "filename": "get.TSLA.py"
             },
-            "label": "",
+            "label": "Get TSLA Stock data",
             "ui_data": {
-              "label": "get.TSLA.py",
-              "image": "/notebook/a-great-project/erik-repro/static/elyra/python.svg",
+              "label": "Get TSLA Stock data",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
               "x_pos": 50,
               "y_pos": 375,
               "description": "Run Python script"
@@ -331,7 +331,7 @@
             "label": "",
             "ui_data": {
               "label": "append.CSVs.py",
-              "image": "/notebook/a-great-project/erik-repro/static/elyra/python.svg",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
               "x_pos": 376,
               "y_pos": 239,
               "description": "Run Python script"
@@ -374,6 +374,16 @@
                   "id": "6531138d-cafe-443d-b257-5a3981c4c500",
                   "node_id_ref": "b99cbdc7-7571-450d-b406-fe6f15d26df5",
                   "port_id_ref": "outPort"
+                },
+                {
+                  "id": "b140e568-dc99-40d7-b98f-6d70fcbf473f",
+                  "node_id_ref": "65048812-1faa-488b-be80-0a94e9763677",
+                  "port_id_ref": "outPort"
+                },
+                {
+                  "id": "e4be5c88-f71c-4bd6-8f50-ce77beaa01d3",
+                  "node_id_ref": "0081265c-f443-4ecb-8628-7c61614cb409",
+                  "port_id_ref": "outPort"
                 }
               ]
             }
@@ -413,10 +423,10 @@
               "mounted_volumes": [],
               "filename": "display.data.py"
             },
-            "label": "",
+            "label": "Create graph!",
             "ui_data": {
-              "label": "display.data.py",
-              "image": "/notebook/a-great-project/erik-repro/static/elyra/python.svg",
+              "label": "Create graph!",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
               "x_pos": 607,
               "y_pos": 176,
               "description": "Run Python script"
@@ -457,6 +467,126 @@
               }
             }
           ]
+        },
+        {
+          "id": "65048812-1faa-488b-be80-0a94e9763677",
+          "type": "execution_node",
+          "op": "execute-python-node",
+          "app_data": {
+            "component_parameters": {
+              "dependencies": [
+                "*.py"
+              ],
+              "include_subdirectories": false,
+              "outputs": [
+                "AMZN_stock_data.csv"
+              ],
+              "env_vars": [],
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "get_AMZN.py"
+            },
+            "label": "",
+            "ui_data": {
+              "label": "get_AMZN.py",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
+              "x_pos": 53,
+              "y_pos": 497,
+              "description": "Run Python script"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "0081265c-f443-4ecb-8628-7c61614cb409",
+          "type": "execution_node",
+          "op": "execute-python-node",
+          "app_data": {
+            "component_parameters": {
+              "dependencies": [
+                "*.py"
+              ],
+              "include_subdirectories": false,
+              "outputs": [
+                "NFLX_stock_data.csv"
+              ],
+              "env_vars": [],
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "get NFLX.py"
+            },
+            "label": "",
+            "ui_data": {
+              "label": "get NFLX.py",
+              "image": "/notebook/a-great-project/chris-text-to-image/static/elyra/python.svg",
+              "x_pos": 58,
+              "y_pos": 614,
+              "description": "Run Python script"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
         }
       ],
       "app_data": {
@@ -475,6 +605,48 @@
                   "node_ref": "71beab03-4495-4e15-a7da-45adb10a662b"
                 }
               ]
+            },
+            {
+              "id": "259f8ada-b514-4bac-9732-d67abdaa5441",
+              "x_pos": 302.81250762939453,
+              "y_pos": 607.01708984375,
+              "width": 175,
+              "height": 78,
+              "content": "A space in the name. What? ",
+              "associated_id_refs": [
+                {
+                  "id": "e9a8360d-9190-4182-9540-933626a8c5b5",
+                  "node_ref": "0081265c-f443-4ecb-8628-7c61614cb409"
+                }
+              ]
+            },
+            {
+              "id": "a153f4b8-2f19-4177-b624-5d926190a575",
+              "x_pos": 308.8124694824219,
+              "y_pos": 473.01708984375,
+              "width": 175,
+              "height": 94,
+              "content": "an underscore in the name. should be ok, right?",
+              "associated_id_refs": [
+                {
+                  "id": "ee5b33d7-ed10-4047-a182-495edcea56e1",
+                  "node_ref": "65048812-1faa-488b-be80-0a94e9763677"
+                }
+              ]
+            },
+            {
+              "id": "ffd1b6ed-5df5-4270-9658-f0d596a002d3",
+              "x_pos": 374.8125,
+              "y_pos": 364.0170593261719,
+              "width": 175,
+              "height": 72,
+              "content": "Added a nice looking label",
+              "associated_id_refs": [
+                {
+                  "id": "f27c7f36-b74a-406e-a57e-b3ed5ae97dc7",
+                  "node_ref": "b99cbdc7-7571-450d-b406-fe6f15d26df5"
+                }
+              ]
             }
           ]
         },
@@ -484,11 +656,11 @@
           "name": "stocks",
           "runtime": "Data Science Pipelines",
           "pipeline_defaults": {
-            "kubernetes_tolerations": [],
-            "kubernetes_pod_annotations": [],
+            "kubernetes_shared_mem_size": {},
             "kubernetes_pod_labels": [],
             "mounted_volumes": [],
-            "kubernetes_shared_mem_size": {},
+            "kubernetes_tolerations": [],
+            "kubernetes_pod_annotations": [],
             "env_vars": [],
             "kubernetes_secrets": [],
             "runtime_image": "quay.io/modh/runtime-images@sha256:27f12a510a034212ce4d579a970cce7aeeb33ffa32044fe88a262ae15d34e763"
